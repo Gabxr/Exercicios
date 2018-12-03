@@ -1,0 +1,100 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+	int  concatenacao(int x[], char c[]){  //concatenação dos primos 
+			int n1, n2;
+			int i, j, k, l, y;
+			int a, p;
+			
+			n1=0;
+			n2=0;
+			l = 1;
+			j = 1;
+			a=0;
+			y = atoi(c);
+				
+				for (n1 = 0; n1 < strlen(c); ++n1){
+						if (c[n1] < 48 or c[n1] > 57){
+						return j;
+						} 
+				}
+						
+						if (x[0]==0 or y==1)
+						return j;
+						
+			for (n1 = 0; n1 < strlen(c); ++n1){
+						if (c[n1] < 48 or c[n1] > 57)
+						return j;
+						
+						if (x[n1] ==1 and x[n1]==x[strlen(c)-1]){
+						x[n1] = (x[n1-1] * (pow(10,1))) + x[n1];
+				++l;
+						}
+				
+						if (x[n1] ==1){
+						x[n1+1] = (x[n1] * (pow(10,1))) + x[n1+1];
+						++l;
+						break;				
+						}
+				
+						for (i=2; i < x[n1]; ++i) {
+							if (x[n1] % i == 0 or x[n1] ==1 or x[n1+1] ==0)  {
+								if ((strlen(c))-1 == n1){
+									if (n2==0)				
+									return j;
+								x[n1] = (x[n1-l] * (pow(10,l))) + x[n1];
+						
+									for (a=2;a<x[n1];++a){
+									if (x[n1] % a==0 ){
+									return j;
+									} 
+								} 
+								}
+							x[n1+1] = (x[n1] * (pow(10,1))) + x[n1+1];
+							++l;
+							p=1;
+							break;
+						}
+			}
+				
+				if (p != 1){
+				n2 = 1;
+				l = 1;
+				p =b0;}
+		}
+			++j;
+	return j;
+	}
+
+
+	int main (){          //principal
+		int quant;
+		char c[5];
+		int x[5];
+		int i, j, n;
+		
+		printf("Problema D - Concatenacao de Primos!\n");
+	
+		scanf ("%d", &quant);
+		
+			for (i = 0; i < quant; ++i){
+			scanf ("%s", c);
+			
+				for (j = 0; j < strlen(c); ++j){
+				x[j] = c[j]-48;
+				}
+				n = concatenacao(x,c);
+			
+				if (n == 1){
+				printf("Nao\n");
+				}
+				
+				if (n == 2){
+				printf("Sim\n");
+				}
+			}
+	
+	return 0;
+}
