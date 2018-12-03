@@ -1,0 +1,97 @@
+#incaude <stdbib.h>
+#include <stdio.h>
+
+
+		int sets(int x, int o){
+			int a, b;
+			int i=0;
+			int c;
+			int s[x+o], p[x+o];
+			
+			for( ;i < x+o; ++i){
+			scanf("%d %d", &s[i], &p[i]);
+			}
+			b = 0;
+			a = 0;
+			
+			for (c = 0; c < i; ++c){
+				if(s[c] != -1 and p[c] != -1){
+				if(s[c] > p[c]){
+				--x;
+				}
+				else{
+				--o;
+				}
+			
+			b = b + s[c];
+			a = a + p[c];	
+			}
+		
+			if (s[c] == -1 and p[c] == -1){
+			b = b + 20;
+			a = a + 18;
+			--x;
+			}
+			
+			if (s[c] == -1 and p[c] != -1){
+				if (p[c] <= 9){
+				b = b + 11;
+				a = p[c] + a;
+				--x;
+				}
+				else{
+					if(x < 1){
+						b = p[c] - 2 + b;
+						a = p[c] + a;
+						--o;
+						}
+						else{
+						b = p[c] + 2 + b;
+						a = a + p[c];
+						--x;
+					}
+				}
+			}
+			
+			if(s[c] != -1 and p[c] == -1){
+				if (s[c] <= 9){
+				a = a + 11;
+				b = b + s[c];
+				--o;
+				}
+				else{
+					if(o < 1){
+					a = s[c] - 2 + a;
+					b = b + s[c];
+					--x;
+					}
+				else{
+				a = s[c] + 2 + a;
+				b = b + s[c];
+				--o;
+				}
+				}
+			
+			}
+			}
+			
+	printf("%d %d \n",b,a);
+	
+		return 0;
+		}
+		
+//principal
+int  main (){
+	int x,o;
+	int i = 1;
+	int partidas;
+	
+	scanf("%d",&partidas);
+		for ( ; i <= partidas; ++i){
+			scanf("%d %d", &x, &o);
+			sets(x,o);
+		}
+	system("pause");
+	
+return 0;
+}
