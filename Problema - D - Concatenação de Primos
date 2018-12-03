@@ -1,160 +1,53 @@
 #include <stdlib.h>
-
-
-
-
 #include <stdio.h>
-
-
 #include <math.h>
-
-
 #include <string.h>
 
 
-
-
-
-
-
-
-
-
 	int  concatenacao(int x[], char c[]){
-  //concatenação dos primos 
-
+ 							 //concatenação dos primos 
 
 
 			int n1, n2;
 			int i, j, k, l, y;
-
-
-
 			int a, p;
-
-
-
-
-			
 			n1=0;
-
-
-
-
 			n2=0;
-
-
-
-
 			l = 1;
 			j = 1;
 			a=0;
-
-
-
-
 			y = atoi(c);
-
-
-
-
-				
-
-
 
 				for (n1 = 0; n1 < strlen(c); ++n1){
 
-
-
-
 						if (c[n1] < 48 or c[n1] > 57){
 
-
-
-
 						return j;
-						} 
-
-
-
-
+						}
 				}
 
-
-
-
-						
-
-
-
 						if (x[0]==0 or y==1)
-
-
-
-
 						return j;
-
-
-
-
-						
-
 
 
 			for (n1 = 0; n1 < strlen(c); ++n1){
-
-
-
-
 						if (c[n1] < 48 or c[n1] > 57)
-
-
-
-
 						return j;
-
-
-
-						
-
-						if (x[n1] ==1 and x[n1]==x[strlen(c)-1]){
-
-
-
-
+						if (x[n1] ==1 and x[n1]==x[strlen(c)-1]);
 						x[n1] = (x[n1-1] * (pow(10,1))) + x[n1];
 
-
-
-
 				++l;
-
 
 
 						}
 
 
-
-
-				
-
-
-
 						if (x[n1] ==1){
-
-
-
 
 						x[n1+1] = (x[n1] * (pow(10,1))) + x[n1+1];
 
 
-
-
 						++l;
-
-
-
-
 						break;				
 
 
@@ -196,10 +89,6 @@
 
 								x[n1] = (x[n1-l] * (pow(10,l))) + x[n1];
 
-
-
-
-						
 
 
 
