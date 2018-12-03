@@ -1,0 +1,96 @@
+#include <stdlib.h>
+
+#include <stdio.h>
+
+#include <strings.h>
+
+#include <math.h>
+
+
+			struct contas {      //tipo de contas
+						float c;
+						float d;
+						char tipoC[2]; 
+						char num[15];
+			};
+			
+			struct contas q[1000];
+			
+						int dc (int i, int n){
+						int a,j,l,k; 
+						char n1[15], n2[15];
+						
+					for (a = n; a >= 0; --a){
+						if (strcmp(q[a].tipoC,"A") == 0){
+			for (j = a; j < n; ++j){
+						if (strlen(q[a].num) != strlen(q[j].num) -1)
+						continue;
+
+						strcpy(n1,q[j].num);
+						n1[strlen(q[a].num)] = NULL;
+
+						for (k = 0; k < strlen(q[j].num)-1; ++k){
+							n2[k] = q[j].num[k + 1];
+						}
+
+						if (strcmp(n1,q[a].num) == 0 or strcmp(n2,q[a].num) == 0) {
+						q[a].d = q[j].d + q[a].d;
+						q[a].c = q[j].c + q[a].c;
+						}
+			}
+					}
+			}
+		}
+		
+		//principal
+		int main (){
+		
+		int n;
+		int i = 0;
+		int x;
+
+		scanf("%d", &n);
+			
+			for ( ; i < n; ++i){
+
+				printf("\nDigite o numero:");
+				scanf("%s",q[i].num);
+
+					while (q[i].num[0] == '0'){
+						for (x = 0; x < strlen(q[i].num); ++x){															q[i].num[x] = q[i].num[x+1]; 
+						}
+						}
+
+						for (x = strlen(q[i].num)-1; x >= 0; --x){
+
+						if (q[i].num[x]!='0'){
+						q[i].num[x+1] = NULL;
+						break; 
+						}
+						}
+			
+					printf("\nQual o tipo da conta? ");
+					scanf("%s", &q[i].tipoC);
+					q[i].c=0;
+					q[i].d=0;
+
+					if (strcmp(q[i].tipoC,"S") == 0){
+
+						printf("\nCredito:");
+						scanf("\n%f", &q[i].c);
+						printf("\nDebito:");
+						scanf("\n%f", &q[i].d);
+					}
+					}	
+	 			dc (i,n);
+	
+			for (i = 0; i < n; ++i){
+			printf("%s ", q[i].num);		
+			printf("%.2f ", q[i].c);
+			printf("%.2f ", q[i].d);
+			printf("\n");
+			}
+				system("pause");	
+					
+	return 0;
+}
