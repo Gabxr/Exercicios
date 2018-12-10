@@ -3,6 +3,7 @@
 
 int main (){
 	char resposta='s';
+	printf("Problema B - O Andarilho! \n");
 	
 do {
 	int n;
