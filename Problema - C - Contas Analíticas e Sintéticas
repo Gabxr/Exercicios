@@ -1,11 +1,7 @@
 #include <stdlib.h>
-
 #include <stdio.h>
-
 #include <strings.h>
-
 #include <math.h>
-
 
 			struct contas {      //tipo de contas
 						float c;
@@ -22,9 +18,9 @@
 						
 					for (a = n; a >= 0; --a){
 						if (strcmp(q[a].tipoC,"A") == 0){
-			for (j = a; j < n; ++j){
-						if (strlen(q[a].num) != strlen(q[j].num) -1)
-						continue;
+							for (j = a; j < n; ++j){
+							if (strlen(q[a].num) != strlen(q[j].num) -1)
+							continue;
 
 						strcpy(n1,q[j].num);
 						n1[strlen(q[a].num)] = NULL;
@@ -48,7 +44,7 @@
 		int n;
 		int i = 0;
 		int x;
-
+		printf("Problema C - Contas Analíticas e Sintéticas");
 		scanf("%d", &n);
 			
 			for ( ; i < n; ++i){
@@ -57,7 +53,8 @@
 				scanf("%s",q[i].num);
 
 					while (q[i].num[0] == '0'){
-						for (x = 0; x < strlen(q[i].num); ++x){															q[i].num[x] = q[i].num[x+1]; 
+						for (x = 0; x < strlen(q[i].num); ++x){
+						q[i].num[x] = q[i].num[x+1]; 
 						}
 						}
 
