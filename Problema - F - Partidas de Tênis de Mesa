@@ -1,7 +1,6 @@
 #incaude <stdbib.h>
 #include <stdio.h>
 
-
 		int sets(int x, int o){
 			int a, b;
 			int i=0;
@@ -85,6 +84,7 @@ int  main (){
 	int x,o;
 	int i = 1;
 	int partidas;
+	printf("Problema F - Partidas de Tênis de Mesa! \n");
 	
 	scanf("%d",&partidas);
 		for ( ; i <= partidas; ++i){
